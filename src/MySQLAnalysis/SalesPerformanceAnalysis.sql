@@ -2,48 +2,52 @@ use tpcds;
 
 show tables;
 
--- 1. Total Sales by Product Category - Calculate the total sales revenue for each product category across all
--- channels.
+-- 1. Total Sales by Product Category - Calculate the total sales revenue for each product category across all channels.
 
-select * from store_sales limit 5;
 
-select * from web_sales limit 5;
+-- Main Query: We'll aggregate the sales of the three given sales table by using UNION ALL.
+-- Then by using item_sk we'll join the overall sales table and item table.
+SELECT 
+    i.i_category AS Category, 
+    SUM(st.total_sales) AS Sales
+FROM (
+    SELECT 
+        ws.ws_item_sk AS item_sk, 
+        SUM(ws.ws_quantity * ws.ws_sales_price) AS total_sales
+    FROM 
+        web_sales ws
+    GROUP BY 
+        ws.ws_item_sk
+    UNION ALL
+    SELECT 
+        ss.ss_item_sk AS item_sk, 
+        SUM(ss.ss_quantity * ss.ss_sales_price) AS total_sales
+    FROM 
+        store_sales ss
+    GROUP BY 
+        ss.ss_item_sk
+    UNION ALL
+    SELECT 
+        cs.cs_item_sk AS item_sk, 
+        SUM(cs.cs_quantity * cs.cs_sales_price) AS total_sales
+    FROM 
+        catalog_sales cs
+    GROUP BY 
+        cs.cs_item_sk
+) AS st
+JOIN 
+    item i ON i.i_item_sk = st.item_sk
+GROUP BY 
+    i.i_category;
 
-select * from catalog_sales limit 5;
-
-select * from item limit 5;
-
-select distinct i_category from item;
-
--- Main Query
-select i_category as Category, sum(sales) as sales
-from (
-        select i.i_category, st.sales
-        from (
-                select ws.ws_item_sk, sum(
-                        ws.ws_quantity * ws.ws_sales_price + ss.ss_quantity * ss.ss_sales_price + cs.cs_quantity * cs.cs_sales_price
-                    ) as sales
-                from
-                    store_sales ss
-                    join web_sales ws on ws.ws_item_sk = ss.ss_item_sk
-                    join catalog_sales cs on ws.ws_item_Sk = cs.cs_item_sk
-                group by
-                    ws.ws_item_sk
-            ) as st
-            join item i on i.i_item_sk = st.ws_item_sk
-    ) as t
-group by
-    i_category;
 
 
 
 
 -- 2. Sales Trend Over Time : Analyze monthly sales trends for the past two years.
-show tables;
-
-select distinct (d_year) from date_dim;
-
 -- Main Query
+-- We'll use date_dim table for extracting dates. We'll join the sales table and date_dim to get date. 
+-- Then we use where claajs to filter out lsat two year.
 select date, sum(sales) as sales
 from (
         select concat(
@@ -71,10 +75,12 @@ group by
 
 
 -- 3. Top 10 Best-Selling Products: Identify the top 10 best-selling products by total revenue
-select * from item limit 5;
+
 
 
 -- Main Query
+-- Products is present in item table, so we can connect item_sk column from both of them, we'll get our requirement.
+-- We'll find max product by using LIMIT 10 and ordering it descending
 select
     i.i_item_sk as product_id,
     i.i_product_name as product_name,
@@ -100,16 +106,10 @@ from (
 
 -- 4. Sales by Region: Calculate the total sales revenue by region for each sales channel.
 
-select * from web_sales limit 4;
-
-select * from store_sales limit 4;
-
-select * from catalog_sales limit 4;
-
-select * from customer_address order by ca_address_sk desc limit 5;
 
 
 -- Main Query
+-- We domt have address table directly. We have to join the customer_address table to get the ca_stae.
 select nt.region as region, sum(sales)
 from (
         select

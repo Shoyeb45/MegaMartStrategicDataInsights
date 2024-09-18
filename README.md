@@ -61,6 +61,7 @@ This report presents a comprehensive analysis of sales and promotional data acro
 ### 5. [Channel Performance Analysis](./src/MySQLAnalysis/ChannelPerformanceAnalysis.sql)
 ### 6. [Supply Chain and Logistics Analysis](./src/MySQLAnalysis/SupplyChainandLogisticsAnalysis.sql)
 
+
 ## 4. Key Findings:
 
 ### 1. Sales Performance Across Channels

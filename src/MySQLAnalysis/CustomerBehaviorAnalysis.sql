@@ -2,10 +2,7 @@ use tpcds;
 show tables;
 
 -- 1. Customer Segmentation by Demographics: Segment customers based on age, income, and region.
-select * from customer;
-select * from income_band;
-select * from customer_address;
-select * from household_demographics;
+
 
 select 
     concat(c.c_salutation, " ", c.c_first_name, " ", c.c_last_name), 
