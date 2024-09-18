@@ -48,3 +48,28 @@ This report presents a comprehensive analysis of sales and promotional data acro
 - Top-performing products contributed to a disproportionate share of sales, with the top 20% of products generating nearly 80% of revenue, in line with the Pareto Principle.
 
 - Discounted items under promotion experienced significant sales spikes, though some items showed little or no improvement, suggesting ineffective targeting or poor product-market fit.
+
+
+## 3. Data Analysis:
+
+- The SQL analysis of this dataset contains mainly the following sections. The rationale and insights are provided in the `sql` file, please check each and every file. Just click on tha name of each file:
+
+### 1. [Sales Perforamance Analysis](./src/MySQLAnalysis/SalesPerformanceAnalysis.sql)
+### 2. [Inventory Management Analysis](./src/MySQLAnalysis/InventoryManagementAnalysis.sql)
+### 3. [Customer Behavior Analysis](./src/MySQLAnalysis/CustomerBehaviorAnalysis.sql)
+### 4. [Promotiona lEffectiveness Analysis](./src/MySQLAnalysis/PromotionalEffectivenessAnalysis.sql)
+### 5. [Channel Performance Analysis](./src/MySQLAnalysis/ChannelPerformanceAnalysis.sql)
+### 6. [Supply Chain and Logistics Analysis](./src/MySQLAnalysis/SupplyChainandLogisticsAnalysis.sql)
+
+## 4. Key Findings:
+
+### 1. Sales Performance Across Channels
+
+
+## 5. Power BI Insights:
+
+
+## 6. Recommendations:
+
+
+## 7. Conclusion: 
