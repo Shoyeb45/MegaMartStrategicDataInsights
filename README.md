@@ -113,11 +113,21 @@ This report presents a comprehensive analysis of sales and promotional data acro
 #### 1.2 Top-Selling Products
 - Why : Identifying the top-selling products helps focus on what is working well, allowing the company to allocate resources efficiently to high-demand items. otal Sales Revenue
 
+<p align=center>
+    <img src="./public/image/10products.png" width=500><br>
+    <i>Top 10 selling products</i>
+</p>
+
 #### 1.3 Sales by Product Category
 - Why: Understanding which product categories are driving revenue allows the company to strategically expand or contract product lines.
 
 #### 1.4 Sales by Region
 - Why: Sales by region help identify geographic strengths and weaknesses, which is crucial for regional marketing and logistics planning.
+
+<p align=center>
+    <img src="./public/image/salesbyregion.png" width=500><br>
+    <i>Sales by region</i>
+</p>
 
 #### 1.5 Average Order Value (AOV)
 - Why: AOV shows the average revenue per order and is a key indicator of customer purchasing behavior. A higher AOV indicates that customers are spending more per transaction.
@@ -128,18 +138,34 @@ This report presents a comprehensive analysis of sales and promotional data acro
 #### 2.1 Days of Inventory on Hand
 - Why: This KPI estimates how long the current inventory will last based on sales rates, helping optimize stock levels.
 
+<p align=center>
+    <img src="./public/image/invCount.png" width=500><br>
+    <i>Inventory count per year</i>
+</p>
 
 ### 3. Customer Behavior KPIs
 
 #### 3.1 Customer Lifetime Value (CLTV)
 - Why : CLTV is a critical metric that estimates how much revenue a customer is expected to bring over their entire relationship with the company. It helps identify high-value customers.
+
+<p align=center>
+    <img src="./public/image/cltv.png" width=500><br>
+    <i>Customer wise CLTV</i>
+</p>
+
 #### 3.2  Repeat Purchase Rate
 - Why: This KPI tracks the percentage of customers who make multiple purchases, which indicates loyalty and customer satisfaction.
 
 
 ### 4. Promotional Effectiveness KPIs
+
 #### 4.1 Promotion Uplift
 - Why: This KPI measures the increase in sales during promotional periods, helping to assess the effectiveness of promotions.
+
+<p align=center>
+    <img src="./public/image/salesuplift.png" width=500><br>
+    <i>Sales Uplift %</i>
+</p>
 
 
 ### 5. Channel Performance KPIs
@@ -147,21 +173,41 @@ This report presents a comprehensive analysis of sales and promotional data acro
 #### 5.1  Sales Contribution by Channel
 - Why: Measuring the percentage of total sales by channel helps understand the contribution of each channel (in-store, online, catalog) to overall sales.
 
+<p align=center>
+    <img src="./public/image/channelcate.png" width=500><br>
+    <i>Category and sales wise sales</i>
+</p>
+
+
 #### 5.2 Conversion Rate (Online Sales)
 - Why: The conversion rate measures the percentage of website visitors who make a purchase, providing insights into e-commerce performance.
+
+<p align=center>
+    <img src="./public/image/convrate.png" width=500><br>
+    <i>Online conversion rate</i>
+</p>
 
 ### 6. Supply Chain and Logistics KPIs
 
 #### 6.1 Warehouse Turnover Rate
 - Why: This KPI measures how efficiently inventory is moving through the warehouse, indicating how well inventory is managed.
 
+<p align=center>
+    <img src="./public/image/turnover.png" width=500><br>
+    <i>Warehouse turnover rate by year</i>
+</p>
+
 #### 6.2 Average Shipping Time
 - Why: Tracking the average time it takes for orders to ship provides insights into logistical efficiency.
 
 #### 6.3 Shipping Mode Efficiency
 - Why: This KPI compares the cost-effectiveness and speed of different shipping methods (e.g., air vs. ground).
-### 1. Sales Performance KPIs
-### 1. Sales Performance KPIs
+
+<p align=center>
+    <img src="./public/image/shipmodes.png" width=500><br>
+    <i>Cost effectiveness by ship modes</i>
+</p>
+
 
 ## 6. Recommendations:
 After analysing the data in mysql and power bi, following are key important recommendations for Mega Mart.
@@ -193,3 +239,5 @@ Let's take a look into key insight from the data analysis of the data set provid
 - The significant contribution of high-value customers and the need for personalized loyalty programs to enhance customer lifetime value (CLTV).
 - The potential for improvement in inventory turnover and supply chain efficiency through optimized warehouse management and better shipping strategies.
 - The need to refine promotion strategies, especially for underperforming catalog and press campaigns, and to shift focus toward higher ROI digital promotions.
+
+

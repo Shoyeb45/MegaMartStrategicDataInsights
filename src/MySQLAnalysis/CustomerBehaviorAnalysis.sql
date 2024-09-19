@@ -39,8 +39,8 @@ SELECT * FROM customer;
 WITH temp_info AS (
     SELECT
         c.c_customer_sk as customer_sk,
-        AVG(COALESCE(ws.ws_quantity * ws.ws_sales_price + ss.ss_quantity * ss.ss_sales_price + cs.cs_quantity * cs.cs_sales_price, 0)) AS avg_purchas_val,
-        count(*) as total_purchases
+        AVG(COALESCE(ws.ws_quantity * ws.ws_sales_price + ss.ss_quantity * ss.ss_sales_price + cs.cs_quantity * cs.cs_sales_price, 0)) AS avg_purchase_val,
+        count(*) as total_purchases,
         dd.d_date AS first_purchase, 
         dd2.d_date AS last_purchase
     FROM 
@@ -65,18 +65,18 @@ WITH temp_info AS (
 temp_info2 AS  (
     SELECT
         customer_sk AS customer_id,
-        avg_purchase_value
+        avg_purchase_val,
         (TIMESTAMPDIFF(MONTH, first_purchase, last_purchase) + 1) AS customer_lifespan,
-        total_purchases / (TIMESTAMPDIFF(MONTH, first_purchase, last_purchase) + 1) AS avg_purchase_frequency,
+        total_purchases / (TIMESTAMPDIFF(MONTH, first_purchase, last_purchase) + 1) AS avg_purchase_frequency
     FROM 
         temp_info
 )
 SELECT 
     customer_id,
-    avg_purchase_value,
+    avg_purchase_val,
     avg_purchase_frequency,
     customer_lifespan,
-    (avg_purchase_value * avg_purchase_frequency * customer_lifespan) AS CLTV
+    (avg_purchase_val * avg_purchase_frequency * customer_lifespan) AS CLTV
 FROM 
     temp_info2
 ORDER BY 
