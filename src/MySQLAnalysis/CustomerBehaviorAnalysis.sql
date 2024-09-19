@@ -85,11 +85,6 @@ ORDER BY
 
 
 -- 3. RepeatPurchaseRate: Determine the repeat purchase rate for each customer segment
-SELECT * FROM customer_address;
-SELECT * FROM customer;
-
-SELECT * FROM web_sales;
-
 
 
 
@@ -188,15 +183,13 @@ FROM
 
 -- 4. Average Purchase Frequency:  Calculate the average purchase frequency per customer.
 SELECT @total_customer := MAX(c_customer_sk) FROM customer;
-SELECT @total_customer;
-
 
 WITH temp AS (
     SELECT 
         ws_bill_customer_sk
     FROM 
         web_sales
-    WHERE 
+    WHERE
     ws_bill_customer_sk is not null
     UNION ALL
     SELECT 
@@ -211,7 +204,7 @@ WITH temp AS (
     FROM 
         catalog_sales
     WHERE
-    cs_bill_cus  tomer_sk is not null
+    cs_bill_customer_sk is not null
 )
 SELECT
     ws_bill_customer_sk as customer_id,
