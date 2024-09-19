@@ -241,3 +241,15 @@ Let's take a look into key insight from the data analysis of the data set provid
 - The need to refine promotion strategies, especially for underperforming catalog and press campaigns, and to shift focus toward higher ROI digital promotions.
 
 
+## Extra Links
+1. [Power BI Report - (.pbix)](https://drive.google.com/file/d/1RneJIBuYIckbFKXvWu6d1Da45iFd5BPY/view?usp=drive_link)
+3. [Power BI Report - (.pdf)](./powerBIReport.pdf)
+2. [Presentation(.pdf)](./ReportPresentation.pdf) 
+2. [Presentation(.pptx)](./ReportPresentation.pptx) 
+
+
+# Credits 
+1. [Our Mentor - Imran Sir](https://www.linkedin.com/in/mdimrana/)
+2. [ChatGPT](https://chatgpt.com/)
+3. [ZoomChart](https://zoomcharts.com/)
+4. [Youtube](https://youtube.com/)
